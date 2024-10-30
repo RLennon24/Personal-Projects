@@ -397,4 +397,3 @@ public class WindowCalc implements Runnable, ActionListener {
 
     }
 
-}
