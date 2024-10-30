@@ -283,6 +283,7 @@ public class WindowCalc implements Runnable, ActionListener {
 
     public double equalResult(Double num1, Double num2, String tempactioncommand) {
         Double result = 0.0;
+
         switch (tempactioncommand) {
             case "/":
                 result = num1 / num2;
