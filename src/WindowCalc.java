@@ -19,8 +19,8 @@ public class WindowCalc implements Runnable, ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.add(createMainPanel(), BorderLayout.NORTH);
-        frame.add(createSpecButtons(),BorderLayout.CENTER);
-        frame.add(createButtons(),BorderLayout.SOUTH);
+        frame.add(createSpecButtons(), BorderLayout.CENTER);
+        frame.add(createButtons(), BorderLayout.SOUTH);
 
 
         frame.pack();
@@ -38,11 +38,13 @@ public class WindowCalc implements Runnable, ActionListener {
         textarea.setFont(new Font("Monospaced", Font.PLAIN, 30));
         //NEED TO FIGURE OUT FONT NAME
         textarea.setCaretColor(Color.WHITE);
-        textarea.setSize(0,100);
+        textarea.setSize(0, 100);
+        textarea.setLineWrap(true);
         JScrollPane scrollPane = new JScrollPane(textarea);
         panel.add(scrollPane);
         return panel;
     }
+
     private JPanel createSpecButtons() {
 ////////////create special operator buttons///////////////////
         JPanel SpecOpsPanel = new JPanel();
@@ -94,18 +96,16 @@ public class WindowCalc implements Runnable, ActionListener {
     }
 
 
-
-
     private JPanel createButtons() {
 ///////////////////create number and operator buttons///////////////////////////
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(6, 0,0,0));
+        buttonPanel.setLayout(new GridLayout(6, 0, 0, 0));
         for (int i = 0; i < 24; i++) {
             JButton button = new JButton();
             switch (i) {
                 case 0:
                     button.setText("%");
-                    button.setBounds(0,0,15,15);
+                    button.setBounds(0, 0, 15, 15);
                     button.addActionListener(this);
                     button.setActionCommand("%");
                     buttonPanel.add(button);
@@ -113,7 +113,7 @@ public class WindowCalc implements Runnable, ActionListener {
                     break;
                 case 1:
                     button.setText("CE");
-                    button.setPreferredSize(new Dimension(15,15));
+                    button.setPreferredSize(new Dimension(15, 15));
                     button.addActionListener(this);
                     button.setActionCommand("CE");
                     buttonPanel.add(button);
@@ -121,147 +121,147 @@ public class WindowCalc implements Runnable, ActionListener {
                     break;
                 case 2:
                     button.setText("C");
-                    button.setPreferredSize(new Dimension(15,15));
+                    button.setPreferredSize(new Dimension(15, 15));
                     button.addActionListener(this);
                     button.setActionCommand("C");
                     buttonPanel.add(button);
                     break;
                 case 3:
                     button.setText("BACK");
-                    button.setPreferredSize(new Dimension(15,15));
+                    button.setPreferredSize(new Dimension(15, 15));
                     button.addActionListener(this);
                     button.setActionCommand("BACK");
                     buttonPanel.add(button);
                     break;
                 case 4:
                     button.setText("1/x");
-                    button.setPreferredSize(new Dimension(15,15));
+                    button.setPreferredSize(new Dimension(15, 15));
                     button.addActionListener(this);
                     button.setActionCommand("1/x");
                     buttonPanel.add(button);
                     break;
                 case 5:
                     button.setText("x^2");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("x^2");
                     buttonPanel.add(button);
                     break;
                 case 6:
                     button.setText("sqrt(x)");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("sqrt(x)");
                     buttonPanel.add(button);
                     break;
                 case 7:
                     button.setText("/");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("/");
                     buttonPanel.add(button);
                     break;
                 case 8:
                     button.setText("7");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("7");
                     buttonPanel.add(button);
                     break;
                 case 9:
                     button.setText("8");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("8");
                     buttonPanel.add(button);
                     break;
                 case 10:
                     button.setText("9");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("9");
                     buttonPanel.add(button);
                     break;
                 case 11:
-                    button.setText("X");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setText("*");
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
-                    button.setActionCommand("X");
+                    button.setActionCommand("*");
                     buttonPanel.add(button);
                     break;
                 case 12:
                     button.setText("4");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("4");
                     buttonPanel.add(button);
                     break;
                 case 13:
                     button.setText("5");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("5");
                     buttonPanel.add(button);
                     break;
                 case 14:
                     button.setText("6");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("6");
                     buttonPanel.add(button);
                     break;
                 case 15:
                     button.setText("-");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("-");
                     buttonPanel.add(button);
                     break;
                 case 16:
                     button.setText("1");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("1");
                     buttonPanel.add(button);
                     break;
                 case 17:
                     button.setText("2");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("2");
                     buttonPanel.add(button);
                     break;
                 case 18:
                     button.setText("3");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("3");
                     buttonPanel.add(button);
                     break;
                 case 19:
                     button.setText("+");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("+");
                     buttonPanel.add(button);
                     break;
                 case 20:
                     button.setText("+/-");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("+/-");
                     buttonPanel.add(button);
                     break;
                 case 21:
                     button.setText("0");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("0");
                     buttonPanel.add(button);
                     break;
                 case 22:
                     button.setText(".");
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand(".");
                     buttonPanel.add(button);
@@ -270,7 +270,7 @@ public class WindowCalc implements Runnable, ActionListener {
                     button.setText("=");
                     button.setBackground(Color.BLUE);
                     button.setForeground(Color.WHITE);
-                    button.setPreferredSize(new Dimension(50,50));
+                    button.setPreferredSize(new Dimension(50, 50));
                     button.addActionListener(this);
                     button.setActionCommand("=");
                     buttonPanel.add(button);
@@ -280,16 +280,44 @@ public class WindowCalc implements Runnable, ActionListener {
         }
         return buttonPanel;
     }
+
+    public double equalResult(Double num1, Double num2, String tempactioncommand) {
+        Double result = 0.0;
+
+        switch (tempactioncommand) {
+            case "/":
+                result = num1 / num2;
+                textarea.setText(result.toString());
+                break;
+            case "*":
+                result= num1*num2;
+                textarea.setText(result.toString());
+                break;
+            case "-":
+                result=num1-num2;
+                textarea.setText(result.toString());
+                break;
+            case "+":
+                result=num1+num2;
+                textarea.setText(result.toString());
+                break;
+
+        }
+        return result;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        String actionCommand=  ((JButton) e.getSource()).getActionCommand();
-        JOptionPane error = new JOptionPane();
-        PopupFactory pf=new PopupFactory();
-        JPanel errorPan= new JPanel();
-        errorPan.add(error);
-        p= pf.getPopup(frame,errorPan, 180,100);
+        String actionCommand = ((JButton) e.getSource()).getActionCommand();
+        String data;
 
-        switch(actionCommand){
+        JOptionPane error = new JOptionPane();
+        PopupFactory pf = new PopupFactory();
+        JPanel errorPan = new JPanel();
+        errorPan.add(error);
+        p = pf.getPopup(frame, errorPan, 180, 100);
+
+        switch (actionCommand) {
             case "MC":
                 break;
             case "MR":
@@ -307,6 +335,7 @@ public class WindowCalc implements Runnable, ActionListener {
             case "CE":
                 break;
             case "C":
+                textarea.setText(null);
                 break;
             case "1/x":
                 break;
@@ -315,9 +344,9 @@ public class WindowCalc implements Runnable, ActionListener {
             case "sqrt(x)":
                 break;
             case "/":
-                String data= textarea.getText().trim();
-                tempactioncommand= ((JButton) e.getSource()).getActionCommand();
-                if(data.length()>0) {
+                data = textarea.getText().trim();
+                tempactioncommand = ((JButton) e.getSource()).getActionCommand();
+                if (data.length() > 0) {
                     if (num1 == null) {
                         num1 = (Double) Double.parseDouble(data);
                         textarea.setText("");
@@ -336,8 +365,17 @@ public class WindowCalc implements Runnable, ActionListener {
             case "9":
                 textarea.append("9");
                 break;
-            case "x":
-                tempactioncommand= ((JButton) e.getSource()).getActionCommand();
+            case "*":
+                tempactioncommand = ((JButton) e.getSource()).getActionCommand();
+                data = textarea.getText().trim();
+                if (data.length() > 0) {
+                    if (num1 == null) {
+                        num1 = (Double) Double.parseDouble(data);
+                        textarea.setText("");
+                    } else {
+                        error.showMessageDialog(frame, "Please enter a number");
+                    }
+                }
                 break;
             case "4":
                 textarea.append("4");
@@ -349,11 +387,19 @@ public class WindowCalc implements Runnable, ActionListener {
                 textarea.append("6");
                 break;
             case "-":
-                tempactioncommand= ((JButton) e.getSource()).getActionCommand();
+                tempactioncommand = ((JButton) e.getSource()).getActionCommand();
+                data = textarea.getText().trim();
+                if (data.length() > 0) {
+                    if (num1 == null) {
+                        num1 = (Double) Double.parseDouble(data);
+                        textarea.setText("");
+                    } else {
+                        error.showMessageDialog(frame, "Please enter a number");
+                    }
+                }
                 break;
             case "1":
                 textarea.append("1");
-                System.out.println(1);
                 break;
             case "2":
                 textarea.append("2");
@@ -362,7 +408,16 @@ public class WindowCalc implements Runnable, ActionListener {
                 textarea.append("3");
                 break;
             case "+":
-                tempactioncommand= ((JButton) e.getSource()).getActionCommand();
+                tempactioncommand = ((JButton) e.getSource()).getActionCommand();
+                data = textarea.getText().trim();
+                if (data.length() > 0) {
+                    if (num1 == null) {
+                        num1 = (Double) Double.parseDouble(data);
+                        textarea.setText("");
+                    } else {
+                        error.showMessageDialog(frame, "Please enter a number");
+                    }
+                }
                 break;
             case "+/-":
 
@@ -374,26 +429,32 @@ public class WindowCalc implements Runnable, ActionListener {
                 textarea.append(".");
                 break;
             case "=":
-                String result= equalResult(num1,num2,tempactioncommand).toString();
-                textarea.setText(result);
+                String dataeq = textarea.getText().trim();
+                if (dataeq.length() > 0) {
+                    if (num2 == null) {
+                        num2 = (Double) Double.parseDouble(dataeq);
+                        textarea.setText("");
+                    } else {
+                        error.showMessageDialog(frame, "Please enter a number");
+                    }
+                    String result = String.valueOf(equalResult(num1, num2, tempactioncommand));
+                    textarea.setText(result);
+                    num1= null;
+                    num2 = null;
+                    break;
                 }
 
         }
-        }
-    public static Double equalResult(Double num1,Double num2, String tempactioncommand) {
-    double result = 0.0;
-        switch(tempactioncommand){
-            case "/":
-                result= (num1/num2);
-    }
-        return (Double) result;
-
     }
 
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         //add method call
         SwingUtilities.invokeLater(new WindowCalc());
 
     }
+}
+
+
+
 
