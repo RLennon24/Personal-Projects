@@ -107,7 +107,7 @@ public class WindowCalc implements Runnable, ActionListener {
                     }
                 }
                 break;
-
+ 
             case "C":
                 textarea.setText("");
                 num1 = null;
