@@ -9,10 +9,10 @@ import org.json.JSONObject;
 public class RideShare {
     public static JSONObject getCoordinates(String address) throws Exception {
         String apiKey = "YOUR_GOOGLE_API_KEY";  // Replace with your API key
-        String urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=" 
+        String googleString = "https://maps.googleapis.com/maps/api/geocode/json?address=" 
                             + address.replace(" ", "+") + "&key=" + apiKey;
         
-        URL url = new URL(urlString);
+        URL url = new URL(googleString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 
